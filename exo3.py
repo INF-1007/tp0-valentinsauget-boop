@@ -35,3 +35,35 @@ Prompts EXACTS :
 # TODO: Calculer, arrondir (ceil) et determiner le(s) meilleur(s)
 
 # TODO: Afficher la phrase exacte
+import math
+try:
+    distance = float(input("Entrez la distance jusqu'au CEPSUM (en kilometres) :"))
+    attente_navette = float(input("Entrez le temps d'attente de la navette (en minutes) :"))
+    temps_metro = float(input("Entrez le temps du trajet en metro (en minutes) :"))
+    controle = float(input("Entrez le temps de controle a l'entree (en minutes) :"))
+    if distance<0 or attente_navette<0 or temps_metro<0 or controle<0 : 
+        print("Erreur - donnees invalides.")
+        exit()
+    marche  = math.ceil(distance * 60 / 5 + controle)
+    navette = math.ceil(attente_navette + distance * 60 / 18 + controle)
+    metro   = math.ceil(temps_metro + controle)
+    if marche<navette and marche<metro :
+     print("Option la plus rapide : marcher.")
+    elif navette < marche and navette < metro : 
+        print("Option la plus rapide : navette.") 
+    elif metro < marche and metro < navette : 
+        print("Option la plus rapide : metro.") 
+    elif marche == navette == metro : 
+        print("Egalite : marcher, navette et metro.")
+    elif marche == navette : 
+        print("Egalite : marcher et navette")
+    elif marche == metro : 
+         print("Egalite : marcher et metro")
+    else : 
+        print("Egalite : navette et metro")
+except ValueError:
+    print("Erreur - donnees invalides.")
+    
+
+
+

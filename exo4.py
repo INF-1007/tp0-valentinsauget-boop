@@ -34,3 +34,24 @@ Prompts EXACTS :
 # TODO: Calcul pente et angle
 
 # TODO: Affichage exact (+ ligne depassement si necessaire)
+import math 
+try : 
+    hauteur_cm = float(input())
+    longueur_m = float(input())
+    if hauteur_cm < 0 or longueur_m <= 0:
+        print("Erreur - donnees invalides.")
+        exit()
+    hauteur_m = hauteur_cm / 100
+    pente = (hauteur_m / longueur_m) * 100
+    angle = math.atan(hauteur_m / longueur_m) * 180 / math.pi
+    if pente <= 8 : 
+        print(f"Pente: {pente:.2f}% " , f"Angle: {angle:.2f} deg" , f"Conforme: OUI" , sep="\n")
+    else : 
+        depassement = pente - 8 
+        print(f"Pente: {pente:.2f}% " , f"Angle: {angle:.2f} deg" , f"Conforme: NON" ,f"Depassement: {depassement:.2f}%" , sep="\n")
+except : 
+    print("Erreur - donnees invalides.")
+    
+
+
+
