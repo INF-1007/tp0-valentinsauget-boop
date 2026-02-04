@@ -39,11 +39,11 @@ try:
     match_soccer = int(input("Entrez le nombre de matchs de soccer feminin des Carabins suivis cet automne : "))
     duree_soccer = int(input("Entrez la duree moyenne d'un match de soccer suivi (en minutes) : "))
     if match_football < 0 or duree_football <=0 : 
-            print("Erreur - donnees invalides.")
-            exit()
+        print("Erreur - donnees invalides.")
+        exit()
     if match_soccer < 0 or duree_soccer <= 0 :
-            print("Erreur - donnees invalides.")
-            exit()
+        print("Erreur - donnees invalides.")
+        exit()
     minutes_total_football = match_football * duree_football
     minutes_total_soccer = match_soccer * duree_soccer
     heure_football = minutes_total_football // 60

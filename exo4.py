@@ -36,10 +36,9 @@ Prompts EXACTS :
 # TODO: Affichage exact (+ ligne depassement si necessaire)
 import math 
 try : 
-    hauteur_cm = float(input())
-    longueur_m = float(input())
+    hauteur_cm = float(input("Entrez la hauteur a franchir (en centimetres) :"))
+    longueur_m = float(input("Entrez la longueur horizontale (en metres) :"))
     if hauteur_cm < 0 or longueur_m <= 0:
-        print("Erreur - donnees invalides.")
         exit()
     hauteur_m = hauteur_cm / 100
     pente = (hauteur_m / longueur_m) * 100
